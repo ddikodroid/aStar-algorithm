@@ -260,7 +260,7 @@ void MakeMap(){
     TempCity.AddNeighbor("Arad",75);
     Cities.push_back(TempCity);
 }
-bool	GetChildCity (Neighbor Parent, City* ChildCity){
+bool GetChildCity (Neighbor Parent, City* ChildCity){
     vector<City>::iterator	CityNumber;
 
     for(CityNumber=Cities.begin();CityNumber<Cities.end();CityNumber++){
@@ -273,7 +273,7 @@ bool	GetChildCity (Neighbor Parent, City* ChildCity){
 
 //C++ Minimum Priority Queue Equivalent - Based on Distance to Goal
 
-City	FindShortestPath(int *LowestPathDistance){
+City FindShortestPath(int *LowestPathDistance){
     vector<City>::iterator	FrontierNumber;
     vector<City>::iterator	LowestNodeNumber;
 
@@ -336,8 +336,8 @@ bool AStarSearch(string StartName, string GoalName){
 
     Frontier.push_back(StartCity);
 
-    cout<<"\nRecording Exploratory Process:\n"<<"Start Location: "<<
-        StartName<<"\t Ending Location: "<<GoalName<<endl;
+    cout<<"\nA* Search\n"<<"Initial: "<<
+        StartName<<"\t Goal: "<<GoalName<<endl;
 
 //Get Next Location on the Frontier
 
@@ -373,8 +373,8 @@ bool AStarSearch(string StartName, string GoalName){
         }
     }
 
-    cout<<"\n\nBest Goal Path:\n";
-    cout<<GoalPath<<" Distance: "<<GoalDistance<<endl;
+    cout<<"\n\nPath solution:\n";
+    cout<<GoalPath<<" Path cost: "<<GoalDistance<<endl;
     cout<<"Evaluation Complete\n";
     return true;
 }
@@ -396,6 +396,5 @@ int	main(){
     cout<<"Enter end city: ";
     cin>>end;
     AStarSearch(start, end);
-    //AStarSearch("Arad", "Oradea");
     return 0;
 }
