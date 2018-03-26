@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 // Structure containing minimum Child Expansion Information
 
 struct	Neighbor{
@@ -380,21 +378,17 @@ bool AStarSearch(string StartName, string GoalName){
 }
 
 bool	GetChildCity(Neighbor, City*);
-
 void	MakeMap();
-
 City	FindShortestPath(int *LowestPathDistance);
-
 bool 	AStarSearch(string, string);
 
 
 int	main(){
-    string start, end;
+    string start;
     MakeMap();
     cout<<"Enter start city: ";
     cin>>start;
-    cout<<"Enter end city: ";
-    cin>>end;
-    AStarSearch(start, end);
+    cout<<"The goal city is Bucharest.";
+    AStarSearch(start, "Bucharest");
     return 0;
 }
